@@ -41,10 +41,12 @@ import com.myricseptember.mlkitdocumentscannerstarter.ui.theme.MlKitDocumentScan
 
 class MainActivity : ComponentActivity() {
 
-    //(1) Uncomment there variables
+    //TODO Step 1: Uncomment the variables in onCreate
 //    private lateinit var numberOfPages: String
 //    private var pageList: List<Uri> = emptyList()
 //    private lateinit var documentName: String
+
+    //TODO Step 2: Add the Activity Result Laucher variable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,20 +57,23 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    //TODO Step 4: Receive scanning results
+
+                    //TODO Step 5: Pass the images to the UI
                     DocumentScannerScreen(emptyList())
                 }
             }
         }
     }
 
-    private fun onScanPDFButtonClick() {
-
-    }
-
-    //Uncommnet this method
+    //TODO Step 3: Add the Scanner options
 //    private fun configureDucumentScannerOptions(): GmsDocumentScannerOptions {
 //
 //    }
+
+    private fun onScanPDFButtonClick() {
+        //TODO Step 6: Launch the document scanner
+    }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
@@ -92,15 +97,15 @@ class MainActivity : ComponentActivity() {
         var numberOfPages by remember {
             mutableStateOf<String>("")
         }.also {
-            // () Uncomment this line
-            //numberOfPages = it.value
+            //TODO Step 7: Uncomment numberOfPages variable
+//            numberOfPages = it.value
         }
 
         var documentName by remember {
             mutableStateOf<String>("")
         }.also {
-            // () Uncomment this line
-            //documentName = it.value
+            //TODO Step 8: Uncomment documentName variable
+//            documentName = it.value
         }
 
         Column(
@@ -186,9 +191,10 @@ class MainActivity : ComponentActivity() {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(onClick = {
+                //TODO Step 9: Uncomment documentName variable
+
                 showToast("Scan Button clicked!")
 
-                //Uncomment this code
 //                if (numberOfPages.isEmpty() || numberOfPages.toInt() == 0 || documentName.isEmpty()) {
 //                    validNumberOfPages = numberOfPages.isEmpty() || numberOfPages.toInt() == 0
 //                    validDocumentName = documentName.isEmpty()
